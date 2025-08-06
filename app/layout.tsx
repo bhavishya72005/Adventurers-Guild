@@ -7,6 +7,12 @@ import { ThemeProvider } from '../components/theme-provider'
 export const metadata: Metadata = {
   title: 'Adventurers Guild',
   description: 'Created with Adventure',
+  themeColor: '#ffffff',
+  manifest: '/manifest.json',
+  icons: {
+    icon: '/pwa/icon-192x192.png',
+    apple: '/pwa/icon-192x192.png',
+  },
   generator: 'Adventurers',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
 }
@@ -20,8 +26,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/pwa/icon-192x192.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/pwa/icon-192x192.png" />
+        <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`} > 
+      <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`} >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
